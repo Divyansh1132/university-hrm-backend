@@ -18,5 +18,13 @@ class User(Base):
     is_superuser: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow)
 
+    # Relationships
     role_id: Mapped[int] = mapped_column(ForeignKey("roles.id"), nullable=False)
     role: Mapped["Role"] = relationship("Role")
+
+    # ←←← ONE-TO-ONE WITH EMPLOYEE (fixed bidirectional)
+    employee: Mapped["Employee"] = relationship(
+        "Employee",
+        back_populates="user",
+        uselist=False
+    )
