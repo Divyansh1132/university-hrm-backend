@@ -13,6 +13,8 @@ Built with clean architecture, full JWT Authentication + Role-Based Access Contr
 git clone https://github.com/Divyansh1132/university-hrm-backend.git
 cd university-hrm-backend
 
+```
+
 2. Backend Setup (Local Development)
 
 Bash# Create virtual environment
@@ -28,10 +30,14 @@ uv pip install -r requirements.txt
 # Run the server
 uv run uvicorn app.main:app --reload --port 8000
 
+```
+```
+
 3. First Time Setup (Run Once)
 Bash# Seed default data (Admin, HR, Accountant, HOD, Employee + Departments)
 uv run python seed.py
-
+```
+```
 4. API Documentation
 
 Interactive Swagger UI: http://localhost:8000/docs
@@ -39,6 +45,8 @@ ReDoc: http://localhost:8000/redoc
 OpenAPI JSON: http://localhost:8000/openapi.json
 
 All protected routes require Bearer <token> in Authorization header.
+```
+```
 
 🛠 Tech Stack
 
@@ -49,4 +57,22 @@ Migrations: Alembic
 Auth: JWT + Argon2 password hashing
 Role System: Admin, HR, Department Head, Accountant, Employee
 Dependency Management: uv / pip
+
+```
+Project Structure
+textuniversity-hrm-backend/
+├── app/
+│   ├── api/           # Routers (v1/auth, v1/employees, v1/departments, ...)
+│   ├── core/          # Config, security, logging
+│   ├── db/            # Models, session, base
+│   ├── schemas/       # Pydantic models
+│   ├── services/      # Business logic
+│   └── main.py
+├── alembic/           # Database migrations
+├── seed.py            # Default data (Admin, HR, etc.)
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
+```
 
