@@ -59,6 +59,7 @@ Role System: Admin, HR, Department Head, Accountant, Employee
 Dependency Management: uv / pip
 
 ```
+```
 Project Structure
 textuniversity-hrm-backend/
 ├── app/
@@ -75,4 +76,35 @@ textuniversity-hrm-backend/
 ├── requirements.txt
 └── README.md
 ```
+```
+🔑 Key Features Implemented
+
+Full JWT Authentication + Refresh-ready structure
+Role-Based Access Control (RBAC) with dependency guards
+Employee Self-Service (/me profile view/update)
+HR Management (Create/List/View Employees)
+Department Management
+Accountant role ready for Payroll module
+Proper leave approval hierarchy (HOD → HR) planned next
+```
+```
+🌐 Frontend Integration Guide
+Base URL: http://localhost:8000/api/v1
+Auth Flow:
+
+POST /api/v1/auth/login → get access_token
+Store token (localStorage / context)
+Add Authorization: Bearer <token> to every protected request
+```
+```
+🤝 For Frontend Developer
+
+All endpoints are RESTful and follow standard HTTP status codes
+Request/Response models are clearly defined in Swagger
+Protected routes return 401 or 403 with clear messages
+Feel free to ask me (Divyansh) anything about any endpoint
+```
+
+
+
 
