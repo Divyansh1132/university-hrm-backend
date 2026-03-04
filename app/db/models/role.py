@@ -11,7 +11,8 @@ class RoleEnum(str, PyEnum):
     HR = "hr"
     DEPARTMENT_HEAD = "department_head"
     EMPLOYEE = "employee"
-    GUEST = "guest"  # optional
+    GUEST = "guest"  
+    ACCOUNTANT = "accountant"
 
 
 class Role(Base):
